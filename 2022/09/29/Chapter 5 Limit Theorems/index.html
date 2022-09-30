@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Markov and Chebyshev InequalitiesMarkov InequalitiesIf a random variable $X$ can only take nonnegative values, then $ \mathbf{P}(X \geq a) \leq \frac{\mathbf{E}[X]}{a}, \quad \text { for all } a&gt;0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chapter 5 Limit Theorems">
+<meta property="og:url" content="http://example.com/2022/09/29/Chapter%205%20Limit%20Theorems/index.html">
+<meta property="og:site_name" content="项脊轩">
+<meta property="og:description" content="Markov and Chebyshev InequalitiesMarkov InequalitiesIf a random variable $X$ can only take nonnegative values, then $ \mathbf{P}(X \geq a) \leq \frac{\mathbf{E}[X]}{a}, \quad \text { for all } a&gt;0">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-09-29T12:52:18.000Z">
+<meta property="article:modified_time" content="2022-09-30T10:45:33.295Z">
+<meta property="article:author" content="compass">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/09/29/Chapter%205%20Limit%20Theorems/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Chapter 5 Limit Theorems | 项脊轩</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">项脊轩</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/Chapter%205%20Limit%20Theorems/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="compass">
+      <meta itemprop="description" content="Math, light of my life, fire of my loins. My sin, my soul.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="项脊轩">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Chapter 5 Limit Theorems
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-29 20:52:18" itemprop="dateCreated datePublished" datetime="2022-09-29T20:52:18+08:00">2022-09-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-30 18:45:33" itemprop="dateModified" datetime="2022-09-30T18:45:33+08:00">2022-09-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Introduction-to-Probability/" itemprop="url" rel="index"><span itemprop="name">Introduction to Probability</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Markov-and-Chebyshev-Inequalities"><a href="#Markov-and-Chebyshev-Inequalities" class="headerlink" title="Markov and Chebyshev Inequalities"></a>Markov and Chebyshev Inequalities</h1><h2 id="Markov-Inequalities"><a href="#Markov-Inequalities" class="headerlink" title="Markov Inequalities"></a>Markov Inequalities</h2><p><em>If a random variable $X$ can only take nonnegative values, then</em></p>
+<p>$ \mathbf{P}(X \geq a) \leq \frac{\mathbf{E}[X]}{a}, \quad \text { for all } a&gt;0 $</p>
+<h5 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h5><p>Fix a positive number a and consider the random variable $Y_a$ defined by </p>
+<script type="math/tex; mode=display">Y_{a}=\left\{\begin{array}{ll}
+0, & \text { if } X<a \\
+a, & \text { if } X \geq a
+\end{array}\right.</script><script type="math/tex; mode=display">\implies Y_{a} \leq X</script><script type="math/tex; mode=display">\implies \mathbf{E}\left[Y_{a}\right] \leq \mathbf{E}[X]</script><script type="math/tex; mode=display">\implies \mathbf{E}[X] \geq \mathbf{E}\left[Y_{a}\right]=a \mathbf{P}\left(Y_{a}=a\right)=a \mathbf{P}(X \geq a)</script><h2 id="Chebyshev-Inequalities"><a href="#Chebyshev-Inequalities" class="headerlink" title="Chebyshev Inequalities"></a>Chebyshev Inequalities</h2><p><em>If $X$ is a random variable with mean $\mu$ and variance $\sigma^{2}$, then</em></p>
+<script type="math/tex; mode=display">\mathbf{P}(|X-\mu| \geq c) \leq \frac{\sigma^{2}}{c^{2}}, \quad \text { for all } c>0</script><h5 id="Proof-1"><a href="#Proof-1" class="headerlink" title="Proof"></a>Proof</h5><p>We consider the nonnegative random variable $(X-\mu)^{2}$ and apply the Markov inequality with $a=c^{2} .$</p>
+<script type="math/tex; mode=display">\mathbf{P}(|X-\mu| \geq c)=\mathbf{P}\left((X-\mu)^{2} \geq c^{2}\right)</script><script type="math/tex; mode=display">\mathbf{P}\left((X-\mu)^{2} \geq c^{2}\right) \leq \frac{\mathbf{E}\left[(X-\mu)^{2}\right]}{c^{2}}=\frac{\sigma^{2}}{c^{2}}</script><script type="math/tex; mode=display">\implies\mathbf{P}(|X-\mu| \geq c) \leq \frac{\sigma^{2}}{c^{2}}</script><h1 id="The-Weak-Law-of-Large-Numbers"><a href="#The-Weak-Law-of-Large-Numbers" class="headerlink" title="The Weak Law of Large Numbers"></a>The Weak Law of Large Numbers</h1><p><em>Let $X_1,$  $X_2,$ . . . be independent identically distributed random variables with mean $\mu$. For every $\epsilon&gt;0,$ we have</em></p>
+<script type="math/tex; mode=display">\mathbf{P}\left(\left|M_{n}-\mu\right| \geq \epsilon\right)=\mathbf{P}\left(\left|\frac{X_{1}+\cdots+X_{n}}{n}-\mu\right| \geq \epsilon\right) \rightarrow 0, \quad \text { as } n \rightarrow \infty</script><h1 id="Convergence-in-Probability"><a href="#Convergence-in-Probability" class="headerlink" title="Convergence in Probability"></a>Convergence in Probability</h1><p><em>Let $Y_1,$ $Y_2,$ . . . be a sequence of random variables (not necessarily independent), and let $a$ be a real number. We say that the sequence $Y_n$ converges to $a$ in probability, if for every  $\epsilon&gt;0,$ we have</em></p>
+<script type="math/tex; mode=display">\lim _{n \rightarrow \infty} \mathbf{P}\left(\left|Y_{n}-a\right| \geq \epsilon\right)=0</script><h1 id="The-Central-Limit-Theorem"><a href="#The-Central-Limit-Theorem" class="headerlink" title="The Central Limit Theorem"></a>The Central Limit Theorem</h1><p><em>Let $X_1,$ $X_2,$ . . . be a sequence of independent identically distributed random variables with common mean $\mu$ and variance $\sigma_{2},$ and define</em></p>
+<script type="math/tex; mode=display">Z_{n}=\frac{X_{1}+\cdots+X_{n}-n \mu}{\sigma \sqrt{n}}</script><p><em>Then, the CDF of $Z_n$ converges to the standard normal CDF</em></p>
+<script type="math/tex; mode=display">\Phi(z)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{z} e^{-x^{2} / 2} d x</script><p><em>in the sense that</em></p>
+<script type="math/tex; mode=display">\lim _{n \rightarrow \infty} \mathbf{P}\left(Z_{n} \leq z\right)=\Phi(z) \quad \text{for every    }  z .</script><h1 id="The-Strong-Law-of-Large-Numbers"><a href="#The-Strong-Law-of-Large-Numbers" class="headerlink" title="The Strong Law of Large Numbers"></a>The Strong Law of Large Numbers</h1><p><em>Let $X_1,$  $X_2,$ . . . be a sequence of independent identically distributed random variables with mean $\mu$. Then, the sequence of sample means $M_n = (X_1 + … + X_n)/n$ converges to $\mu,$ with probability 1, in the sense that</em></p>
+<script type="math/tex; mode=display">\mathbf{P}\left(\lim _{n \rightarrow \infty} \frac{X_{1}+\cdots+X_{n}}{n}=\mu\right)=1</script><h4 id="Convergence-with-Probability-1"><a href="#Convergence-with-Probability-1" class="headerlink" title="Convergence with Probability 1"></a>Convergence with Probability 1</h4><p><em>Let $Y_1,$  $Y_2,$ . . . be a sequence of random variables (not necessarily independent). Let $c$ be a real number. We say that $Y_n$ converges to $c$ with probability 1 if</em></p>
+<script type="math/tex; mode=display">\mathbf{P}\left(\lim _{n \rightarrow \infty} Y_{n}=c\right)=1</script>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Markov-and-Chebyshev-Inequalities"><span class="nav-number">1.</span> <span class="nav-text">Markov and Chebyshev Inequalities</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markov-Inequalities"><span class="nav-number">1.1.</span> <span class="nav-text">Markov Inequalities</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Proof"><span class="nav-number">1.1.0.0.1.</span> <span class="nav-text">Proof</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chebyshev-Inequalities"><span class="nav-number">1.2.</span> <span class="nav-text">Chebyshev Inequalities</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Proof-1"><span class="nav-number">1.2.0.0.1.</span> <span class="nav-text">Proof</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Weak-Law-of-Large-Numbers"><span class="nav-number">2.</span> <span class="nav-text">The Weak Law of Large Numbers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Convergence-in-Probability"><span class="nav-number">3.</span> <span class="nav-text">Convergence in Probability</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Central-Limit-Theorem"><span class="nav-number">4.</span> <span class="nav-text">The Central Limit Theorem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Strong-Law-of-Large-Numbers"><span class="nav-number">5.</span> <span class="nav-text">The Strong Law of Large Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Convergence-with-Probability-1"><span class="nav-number">5.0.0.1.</span> <span class="nav-text">Convergence with Probability 1</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">compass</p>
+  <div class="site-description" itemprop="description">Math, light of my life, fire of my loins. My sin, my soul.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">compass</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
