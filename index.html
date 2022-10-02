@@ -372,6 +372,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/Chapter%205%20Limit%20Theorems/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="compass">
+      <meta itemprop="description" content="Math, light of my life, fire of my loins. My sin, my soul.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="项脊轩">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/29/Chapter%205%20Limit%20Theorems/" class="post-title-link" itemprop="url">Chapter 5 Limit Theorems</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-29 20:52:18" itemprop="dateCreated datePublished" datetime="2022-09-29T20:52:18+08:00">2022-09-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-30 18:45:33" itemprop="dateModified" datetime="2022-09-30T18:45:33+08:00">2022-09-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Introduction-to-Probability/" itemprop="url" rel="index"><span itemprop="name">Introduction to Probability</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Markov-and-Chebyshev-Inequalities"><a href="#Markov-and-Chebyshev-Inequalities" class="headerlink" title="Markov and Chebyshev Inequalities"></a>Markov and Chebyshev Inequalities</h1><h2 id="Markov-Inequalities"><a href="#Markov-Inequalities" class="headerlink" title="Markov Inequalities"></a>Markov Inequalities</h2><p><em>If a random variable $X$ can only take nonnegative values, then</em></p>
+<p>$ \mathbf{P}(X \geq a) \leq \frac{\mathbf{E}[X]}{a}, \quad \text { for all } a&gt;0 $</p>
+<h5 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h5><p>Fix a positive number a and consider the random variable $Y_a$ defined by </p>
+<script type="math/tex; mode=display">Y_{a}=\left\{\begin{array}{ll}
+0, & \text { if } X<a \\
+a, & \text { if } X \geq a
+\end{array}\right.</script><script type="math/tex; mode=display">\implies Y_{a} \leq X</script><script type="math/tex; mode=display">\implies \mathbf{E}\left[Y_{a}\right] \leq \mathbf{E}[X]</script><script type="math/tex; mode=display">\implies \mathbf{E}[X] \geq \mathbf{E}\left[Y_{a}\right]=a \mathbf{P}\left(Y_{a}=a\right)=a \mathbf{P}(X \geq a)</script><h2 id="Chebyshev-Inequalities"><a href="#Chebyshev-Inequalities" class="headerlink" title="Chebyshev Inequalities"></a>Chebyshev Inequalities</h2><p><em>If $X$ is a random variable with mean $\mu$ and variance $\sigma^{2}$, then</em></p>
+<script type="math/tex; mode=display">\mathbf{P}(|X-\mu| \geq c) \leq \frac{\sigma^{2}}{c^{2}}, \quad \text { for all } c>0</script><h5 id="Proof-1"><a href="#Proof-1" class="headerlink" title="Proof"></a>Proof</h5><p>We consider the nonnegative random variable $(X-\mu)^{2}$ and apply the Markov inequality with $a=c^{2} .$</p>
+<script type="math/tex; mode=display">\mathbf{P}(|X-\mu| \geq c)=\mathbf{P}\left((X-\mu)^{2} \geq c^{2}\right)</script><script type="math/tex; mode=display">\mathbf{P}\left((X-\mu)^{2} \geq c^{2}\right) \leq \frac{\mathbf{E}\left[(X-\mu)^{2}\right]}{c^{2}}=\frac{\sigma^{2}}{c^{2}}</script><script type="math/tex; mode=display">\implies\mathbf{P}(|X-\mu| \geq c) \leq \frac{\sigma^{2}}{c^{2}}</script><h1 id="The-Weak-Law-of-Large-Numbers"><a href="#The-Weak-Law-of-Large-Numbers" class="headerlink" title="The Weak Law of Large Numbers"></a>The Weak Law of Large Numbers</h1><p><em>Let $X_1,$  $X_2,$ . . . be independent identically distributed random variables with mean $\mu$. For every $\epsilon&gt;0,$ we have</em></p>
+<script type="math/tex; mode=display">\mathbf{P}\left(\left|M_{n}-\mu\right| \geq \epsilon\right)=\mathbf{P}\left(\left|\frac{X_{1}+\cdots+X_{n}}{n}-\mu\right| \geq \epsilon\right) \rightarrow 0, \quad \text { as } n \rightarrow \infty</script><h1 id="Convergence-in-Probability"><a href="#Convergence-in-Probability" class="headerlink" title="Convergence in Probability"></a>Convergence in Probability</h1><p><em>Let $Y_1,$ $Y_2,$ . . . be a sequence of random variables (not necessarily independent), and let $a$ be a real number. We say that the sequence $Y_n$ converges to $a$ in probability, if for every  $\epsilon&gt;0,$ we have</em></p>
+<script type="math/tex; mode=display">\lim _{n \rightarrow \infty} \mathbf{P}\left(\left|Y_{n}-a\right| \geq \epsilon\right)=0</script><h1 id="The-Central-Limit-Theorem"><a href="#The-Central-Limit-Theorem" class="headerlink" title="The Central Limit Theorem"></a>The Central Limit Theorem</h1><p><em>Let $X_1,$ $X_2,$ . . . be a sequence of independent identically distributed random variables with common mean $\mu$ and variance $\sigma_{2},$ and define</em></p>
+<script type="math/tex; mode=display">Z_{n}=\frac{X_{1}+\cdots+X_{n}-n \mu}{\sigma \sqrt{n}}</script><p><em>Then, the CDF of $Z_n$ converges to the standard normal CDF</em></p>
+<script type="math/tex; mode=display">\Phi(z)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{z} e^{-x^{2} / 2} d x</script><p><em>in the sense that</em></p>
+<script type="math/tex; mode=display">\lim _{n \rightarrow \infty} \mathbf{P}\left(Z_{n} \leq z\right)=\Phi(z) \quad \text{for every    }  z .</script><h1 id="The-Strong-Law-of-Large-Numbers"><a href="#The-Strong-Law-of-Large-Numbers" class="headerlink" title="The Strong Law of Large Numbers"></a>The Strong Law of Large Numbers</h1><p><em>Let $X_1,$  $X_2,$ . . . be a sequence of independent identically distributed random variables with mean $\mu$. Then, the sequence of sample means $M_n = (X_1 + … + X_n)/n$ converges to $\mu,$ with probability 1, in the sense that</em></p>
+<script type="math/tex; mode=display">\mathbf{P}\left(\lim _{n \rightarrow \infty} \frac{X_{1}+\cdots+X_{n}}{n}=\mu\right)=1</script><h4 id="Convergence-with-Probability-1"><a href="#Convergence-with-Probability-1" class="headerlink" title="Convergence with Probability 1"></a>Convergence with Probability 1</h4><p><em>Let $Y_1,$  $Y_2,$ . . . be a sequence of random variables (not necessarily independent). Let $c$ be a real number. We say that $Y_n$ converges to $c$ with probability 1 if</em></p>
+<script type="math/tex; mode=display">\mathbf{P}\left(\lim _{n \rightarrow \infty} Y_{n}=c\right)=1</script>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/Chapter%206%20The%20Bernoulli%20and%20Poisson%20Processes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -483,94 +571,6 @@ p_{N_{\tau}}(k)=P(k, \tau)=e^{-\lambda \tau} \frac{(\lambda \tau)^{k}}{k !}, \qu
 <p>If $X_i$ is geometric with parameter $p$, and $N$ is geometric with parameter $q$, then $Y$ is geometric with parameter $pq$. </p>
 <p>If $X_i$ is exponential with parameter $\lambda$, and $N$ is geometric with parameter $q$, then $Y$ is exponential with parameter $\lambda q$.</p>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/Chapter%205%20Limit%20Theorems/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="compass">
-      <meta itemprop="description" content="Math, light of my life, fire of my loins. My sin, my soul.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="项脊轩">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/29/Chapter%205%20Limit%20Theorems/" class="post-title-link" itemprop="url">Chapter 5 Limit Theorems</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-09-29 20:52:18" itemprop="dateCreated datePublished" datetime="2022-09-29T20:52:18+08:00">2022-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-30 18:45:33" itemprop="dateModified" datetime="2022-09-30T18:45:33+08:00">2022-09-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Introduction-to-Probability/" itemprop="url" rel="index"><span itemprop="name">Introduction to Probability</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Markov-and-Chebyshev-Inequalities"><a href="#Markov-and-Chebyshev-Inequalities" class="headerlink" title="Markov and Chebyshev Inequalities"></a>Markov and Chebyshev Inequalities</h1><h2 id="Markov-Inequalities"><a href="#Markov-Inequalities" class="headerlink" title="Markov Inequalities"></a>Markov Inequalities</h2><p><em>If a random variable $X$ can only take nonnegative values, then</em></p>
-<p>$ \mathbf{P}(X \geq a) \leq \frac{\mathbf{E}[X]}{a}, \quad \text { for all } a&gt;0 $</p>
-<h5 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h5><p>Fix a positive number a and consider the random variable $Y_a$ defined by </p>
-<script type="math/tex; mode=display">Y_{a}=\left\{\begin{array}{ll}
-0, & \text { if } X<a \\
-a, & \text { if } X \geq a
-\end{array}\right.</script><script type="math/tex; mode=display">\implies Y_{a} \leq X</script><script type="math/tex; mode=display">\implies \mathbf{E}\left[Y_{a}\right] \leq \mathbf{E}[X]</script><script type="math/tex; mode=display">\implies \mathbf{E}[X] \geq \mathbf{E}\left[Y_{a}\right]=a \mathbf{P}\left(Y_{a}=a\right)=a \mathbf{P}(X \geq a)</script><h2 id="Chebyshev-Inequalities"><a href="#Chebyshev-Inequalities" class="headerlink" title="Chebyshev Inequalities"></a>Chebyshev Inequalities</h2><p><em>If $X$ is a random variable with mean $\mu$ and variance $\sigma^{2}$, then</em></p>
-<script type="math/tex; mode=display">\mathbf{P}(|X-\mu| \geq c) \leq \frac{\sigma^{2}}{c^{2}}, \quad \text { for all } c>0</script><h5 id="Proof-1"><a href="#Proof-1" class="headerlink" title="Proof"></a>Proof</h5><p>We consider the nonnegative random variable $(X-\mu)^{2}$ and apply the Markov inequality with $a=c^{2} .$</p>
-<script type="math/tex; mode=display">\mathbf{P}(|X-\mu| \geq c)=\mathbf{P}\left((X-\mu)^{2} \geq c^{2}\right)</script><script type="math/tex; mode=display">\mathbf{P}\left((X-\mu)^{2} \geq c^{2}\right) \leq \frac{\mathbf{E}\left[(X-\mu)^{2}\right]}{c^{2}}=\frac{\sigma^{2}}{c^{2}}</script><script type="math/tex; mode=display">\implies\mathbf{P}(|X-\mu| \geq c) \leq \frac{\sigma^{2}}{c^{2}}</script><h1 id="The-Weak-Law-of-Large-Numbers"><a href="#The-Weak-Law-of-Large-Numbers" class="headerlink" title="The Weak Law of Large Numbers"></a>The Weak Law of Large Numbers</h1><p><em>Let $X_1,$  $X_2,$ . . . be independent identically distributed random variables with mean $\mu$. For every $\epsilon&gt;0,$ we have</em></p>
-<script type="math/tex; mode=display">\mathbf{P}\left(\left|M_{n}-\mu\right| \geq \epsilon\right)=\mathbf{P}\left(\left|\frac{X_{1}+\cdots+X_{n}}{n}-\mu\right| \geq \epsilon\right) \rightarrow 0, \quad \text { as } n \rightarrow \infty</script><h1 id="Convergence-in-Probability"><a href="#Convergence-in-Probability" class="headerlink" title="Convergence in Probability"></a>Convergence in Probability</h1><p><em>Let $Y_1,$ $Y_2,$ . . . be a sequence of random variables (not necessarily independent), and let $a$ be a real number. We say that the sequence $Y_n$ converges to $a$ in probability, if for every  $\epsilon&gt;0,$ we have</em></p>
-<script type="math/tex; mode=display">\lim _{n \rightarrow \infty} \mathbf{P}\left(\left|Y_{n}-a\right| \geq \epsilon\right)=0</script><h1 id="The-Central-Limit-Theorem"><a href="#The-Central-Limit-Theorem" class="headerlink" title="The Central Limit Theorem"></a>The Central Limit Theorem</h1><p><em>Let $X_1,$ $X_2,$ . . . be a sequence of independent identically distributed random variables with common mean $\mu$ and variance $\sigma_{2},$ and define</em></p>
-<script type="math/tex; mode=display">Z_{n}=\frac{X_{1}+\cdots+X_{n}-n \mu}{\sigma \sqrt{n}}</script><p><em>Then, the CDF of $Z_n$ converges to the standard normal CDF</em></p>
-<script type="math/tex; mode=display">\Phi(z)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{z} e^{-x^{2} / 2} d x</script><p><em>in the sense that</em></p>
-<script type="math/tex; mode=display">\lim _{n \rightarrow \infty} \mathbf{P}\left(Z_{n} \leq z\right)=\Phi(z) \quad \text{for every    }  z .</script><h1 id="The-Strong-Law-of-Large-Numbers"><a href="#The-Strong-Law-of-Large-Numbers" class="headerlink" title="The Strong Law of Large Numbers"></a>The Strong Law of Large Numbers</h1><p><em>Let $X_1,$  $X_2,$ . . . be a sequence of independent identically distributed random variables with mean $\mu$. Then, the sequence of sample means $M_n = (X_1 + … + X_n)/n$ converges to $\mu,$ with probability 1, in the sense that</em></p>
-<script type="math/tex; mode=display">\mathbf{P}\left(\lim _{n \rightarrow \infty} \frac{X_{1}+\cdots+X_{n}}{n}=\mu\right)=1</script><h4 id="Convergence-with-Probability-1"><a href="#Convergence-with-Probability-1" class="headerlink" title="Convergence with Probability 1"></a>Convergence with Probability 1</h4><p><em>Let $Y_1,$  $Y_2,$ . . . be a sequence of random variables (not necessarily independent). Let $c$ be a real number. We say that $Y_n$ converges to $c$ with probability 1 if</em></p>
-<script type="math/tex; mode=display">\mathbf{P}\left(\lim _{n \rightarrow \infty} Y_{n}=c\right)=1</script>
       
     </div>
 
