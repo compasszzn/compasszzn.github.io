@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="link of paper Introductioncurse of dimensionality: The high-dimensionality of the data not only increases the computational time and memory requirements of algorithms, but also adversely affects their">
+  <meta name="description" content="A. Ng, M. Jordan, and Y. Weiss. On spectral clustering: Analysis and an algorithm. In Advances in Neural Information Processing Systems 15, pages 849–856, 2002. AlgorithmGiven a set of points $S &#x3D; \{s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sparse Subspace Clustering">
-<meta property="og:url" content="http://example.com/2022/10/02/sparse-subspace-clustering/index.html">
+<meta property="og:title" content="spectral clustering">
+<meta property="og:url" content="http://example.com/2022/10/05/spectral-clustering/index.html">
 <meta property="og:site_name" content="项脊轩">
-<meta property="og:description" content="link of paper Introductioncurse of dimensionality: The high-dimensionality of the data not only increases the computational time and memory requirements of algorithms, but also adversely affects their">
+<meta property="og:description" content="A. Ng, M. Jordan, and Y. Weiss. On spectral clustering: Analysis and an algorithm. In Advances in Neural Information Processing Systems 15, pages 849–856, 2002. AlgorithmGiven a set of points $S &#x3D; \{s">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-10-02T07:22:59.000Z">
-<meta property="article:modified_time" content="2022-10-04T12:26:59.427Z">
+<meta property="article:published_time" content="2022-10-04T16:16:58.000Z">
+<meta property="article:modified_time" content="2022-10-05T09:30:28.598Z">
 <meta property="article:author" content="compass">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/10/02/sparse-subspace-clustering/">
+<link rel="canonical" href="http://example.com/2022/10/05/spectral-clustering/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>Sparse Subspace Clustering | 项脊轩</title>
+  <title>spectral clustering | 项脊轩</title>
   
 
 
@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/02/sparse-subspace-clustering/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/05/spectral-clustering/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -163,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Sparse Subspace Clustering
+          spectral clustering
         </h1>
 
         <div class="post-meta">
@@ -172,16 +172,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-10-02 15:22:59" itemprop="dateCreated datePublished" datetime="2022-10-02T15:22:59+08:00">2022-10-02</time>
+              <time title="Created: 2022-10-05 00:16:58 / Modified: 17:30:28" itemprop="dateCreated datePublished" datetime="2022-10-05T00:16:58+08:00">2022-10-05</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-10-04 20:26:59" itemprop="dateModified" datetime="2022-10-04T20:26:59+08:00">2022-10-04</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -203,14 +197,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1203.1005.pdf">link of paper</a></p>
-<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>curse of dimensionality: The high-dimensionality of the data not only increases the computational time and memory requirements of algorithms, but also adversely affects their performance due to the noise effect and insuffificient number of samples with respect to the ambient space dimension</p>
-<p>However, high-dimensional data often lie in low-dimensional structures. Therefore,  low-dimensional structures in the data helps us avoid the curse of dimensionality.</p>
-<p>Since data in a subspace are often distributed arbitrarily and not around a centroid, standard clustering methods that take advantage of the spatial proximity of the data in each cluster are not in general applicable to subspace clustering. Therefore, there is a need for having clustering algorithms that take into account the multi-subspace structure of the data. </p>
-<h2 id="Prior-Work-on-Subspace-Clustering"><a href="#Prior-Work-on-Subspace-Clustering" class="headerlink" title="Prior Work on Subspace Clustering"></a>Prior Work on Subspace Clustering</h2><p>Existing algorithms can be divided into four main categories: iterative, algebraic, statistical, and spectral clustering-based methods.</p>
-<h3 id="Iterative-methods"><a href="#Iterative-methods" class="headerlink" title="Iterative methods"></a>Iterative methods</h3><a href="/2022/10/04/K-subspace/" title="K-subspace clustering">K-subspace clustering</a>
-<p>median K-flats</p>
-<h3 id="Algebraic-approaches"><a href="#Algebraic-approaches" class="headerlink" title="Algebraic approaches"></a>Algebraic approaches</h3>
+        <p><em>A. Ng, M. Jordan, and Y. Weiss. On spectral clustering: Analysis and an algorithm. In Advances in Neural Information Processing Systems 15, pages 849–856, 2002.</em></p>
+<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p>Given a set of points $S = \{s_1, … ,s_n\}$ in $\mathbb{R}^{l}$ that we want to cluster into $k$ subsets:</p>
+<ol>
+<li>Form the affinity matrix $A \in \mathbb{R}^{n \times n}$ defined by $A_{i j}=\exp \left(-\left|s_{i}-s_{j}\right|^{2} / 2 \sigma^{2}\right)$ if $i \neq j,$ and $A_{i i}=0$.            (defined by Gaussian kernel)</li>
+<li>Define $D$ to be the diagonal matrix whose $(i, i)$-element is the sum of $A$’s $i$-th row, and construct the matrix $L=D^{-1 / 2} A D^{-1 / 2}$.</li>
+<li>Find $x_1,x_2, …,x_k,$ the $k$ largest eigenvectors of $L$ (chosen to be orthogonal to each other in the case of repeated eigenvalues), and form the matrix $X=[x_1 x_2 … x_k]\in \mathbb{R}^{n \times k}$ by stacking the eigenvectors in columns. </li>
+<li>Form the matrix $Y$ from $X$ by renormalizing each of $X$’s rows to have unit length                                  (i.e. $Y_{i j}=X_{i j} /\left(\sum_{j} X_{i j}^{2}\right)^{1 / 2}$)</li>
+<li>Treating each row of $Y$ as a point in $R^k$ <em>,</em> cluster them into $k$ clusters via K-means or any other algorithm (that attempts to minimize distortion). </li>
+<li>Finally, assign the original point $s_i$ to cluster $j$ if and only if row $i$ of the matrix $Y$ was assigned to cluster $j$. </li>
+</ol>
+<p>Here, the scaling parameter $\sigma^{2}$ controls how rapidly the affinity $A_{ij}$ falls off with the distance between $s_i$ and $s_j$ and we will later describe a method for choosing it automatically. We also note that this is only one of a large family of possible algorithms, and later discuss some related methods.</p>
+<p>Readers familiar with spectral graph theory may be more familiar with the Laplacian $1- L$. But as replacing $L$ with $1- L$ would complicate our later discussion, and only changes the eigenvalues (from $\lambda_i$ to $1 - \lambda_i$ and not the eigenvectors, we instead use $L$ <em>.</em></p>
+<h2 id="Analysis-of-algorithm"><a href="#Analysis-of-algorithm" class="headerlink" title="Analysis of algorithm"></a>Analysis of algorithm</h2><h3 id="Informal-discussion-The-“ideal”-case"><a href="#Informal-discussion-The-“ideal”-case" class="headerlink" title="Informal discussion: The “ideal” case"></a><strong>Informal</strong> discussion: The “ideal” case</h3><p>To understand the algorithm, it is instructive to consider its behavior in the “ideal” case in which all points in different clusters are infinitely far apart. For the sake of discussion, suppose that $k = 3,$ and that the three clusters of sizes $n_1, n_2$ and $n_3,$ are $S_1,S_2,$ and $S_3$ $\left(S=S_{1} \cup S_{2} \cup S_{3}, n=n_{1}+n_{2}+n_{3}\right).$ To simplify our exposition, also assume that the points in $S=\{s_1,…,s_n\}$ are ordered according to which cluster they are in, so that the first $n_1$ points are in cluster $S_1,$ the next $n_2$ point in $S_2,$ etc. We will also use “$j \in S_{i}$” as a short hand for “$s_j \in S_{i}$”. Moving the clusters “infinitely” far apart corresponds to zeroing all the elements $A_{ij}$ corresponding to points $s_i$ and $s_j$ in different clusters.$\left(A_{i j}=\exp \left(-\left|s_{i}-s_{j}\right|^{2} / 2 \sigma^{2}\right) \right)$ In this ideal case, we can gain an approximate matrix $\hat{A}_{i j}$, define $\hat{A}_{i j}=0$ if $s_i$ and $s_j$ are in different clusters, and $\hat{A}_{i j}=A_{ij}$ otherwise. we can define $\hat{D}_{i j},\hat{L}_{i j},\hat{X}_{i j},\hat{Y}_{i j}$ in the previous algorithm.</p>
+<p>Note that $\hat{A}_{i j}$ and $\hat{L}_{i j}$ are block diagonal. (As we assume that the points are ordered according to which cluster they are in)</p>
+<p>$\hat{A}=\left[\begin{array}{ccc}<br>A^{(11)} &amp; 0 &amp; 0 \\<br>0 &amp; A^{(22)} &amp; 0 \\<br>0 &amp; 0 &amp; A^{(33)}<br>\end{array}\right] ; \hat{L}=\left[\begin{array}{ccc}<br>\hat{L}^{(11)} &amp; 0 &amp; 0 \\<br>0 &amp; \hat{L}^{(22)} &amp; 0 \\<br>0 &amp; 0 &amp; \hat{L}^{(33)}<br>\end{array}\right]$</p>
+<p>We using parenthesized superscripts to index into subblocks of vectors/matrices and $\hat{L}^{(i i)}=\left(\hat{D}^{(i i)}\right)^{-1 / 2} \hat {A}^{(i i)}\left(\hat{D}^{(i i)}\right)^{-1 / 2}$(Block matrix operations) Here $\hat {A}^{(i i)}$ is the matrix of “intra-cluster” affinities for cluster $i$. </p>
+<p>To construct $\hat{X}$, we find $ \hat{L}$’s first $k$ = 3 eigenvectors. Since $ \hat{L}$ is block diagonal, its eigenvalues and eigenvectors are the union of the eigenvalues and eigenvectors of its blocks (the latter padded appropriately with zeros). It is straightforward to show that $\hat{L}^{(i i)}$ has a strictly positive principal eigenvector $x_{1}^{(i)} \in \mathbb{R}^{n_{i}}$ with eigenvalue 1. Also, since $A_{j k}^{(i i)}&gt;0(j \neq k),$ the next eigenvalue is strictly less than 1. Thus, staking $ \hat{L}$’s eigenvectors in columns to obtain $ \hat{X}$，we have：</p>
+<p>$\hat{X}=\left[\begin{array}{ccc}<br>x_{1}^{(1)} &amp; \overrightarrow{0} &amp; \overrightarrow{0} \\<br>\overrightarrow{0} &amp; x_{1}^{(2)} &amp; \overrightarrow{0} \\<br>\overrightarrow{0} &amp; \overrightarrow{0} &amp; x_{1}^{(3)}<br>\end{array}\right] \in \mathbb{R}^{n \times 3}$</p>
+<p>$\hat{X}$ could have been replaced by $\hat XR$ for any orthogonal matrix $ R \in \mathbb{R}^{3 \times 3}$. In this condition, we can consider the subspace spanned by the column of the $\hat X$</p>
+<p>Next, when we renormalize each of $\hat{X}$’s rows to have unit length, we obtain:</p>
+<p>$\hat{Y}=\left[\begin{array}{l}<br>\hat{Y}^{(1)} \\<br>\hat{Y}^{(2)} \\<br>\hat{Y}^{(3)}<br>\end{array}\right]=\left[\begin{array}{lll}<br>\overrightarrow{1} &amp; \overrightarrow{0} &amp; \overrightarrow{0} \\<br>\overrightarrow{0} &amp; \overrightarrow{1} &amp; \overrightarrow{0} \\<br>\overrightarrow{0} &amp; \overrightarrow{0} &amp; \overrightarrow{1}<br>\end{array}\right] R$</p>
+<p>where we have used $\hat{Y}^{(i)} \in \mathbb{R}^{n_{i} \times k}$ to denote the $i$-th subblock of $\hat{Y}$. Letting $\hat{y}_{j}^{(i)}$ denote the $j$-th row of $\hat{Y}^{(i)}$, we therefore see that $\hat{y}_{j}^{(i)}$ is the $i$-th row of the orthogonal matrix R.</p>
+<p>Then there exist $k$ <em>orthogonal</em> <em>vectors</em> $r_1,r_2,…,r_k$ $\left(r_{i}^{T} r_{j}=1 \text { if } i=j, 0 \text { otherwise }\right)$ <em>so</em> <em>that</em> $\hat{Y}$’s rows <em>satisfy</em> $\hat{y}_{j}^{(i)}=r_{i}$$   \text { for all } i=1, \ldots, k, j=1, \ldots, n_{i} \text {. }$</p>
+<p>In other words, there are $k$ mutually orthogonal points on the surface of the unit $k$-sphere around which $Y$​’s rows will cluster. Moreover, these clusters correspond exactly to the true clustering of the original data. </p>
+
     </div>
 
     
@@ -225,12 +236,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/10/02/Graph-Convolutional-Subspace-Clustering/" rel="prev" title="Graph Convolutional Subspace Clustering">
-      <i class="fa fa-chevron-left"></i> Graph Convolutional Subspace Clustering
+    <a href="/2022/10/04/K-subspace/" rel="prev" title="K-subspace clustering">
+      <i class="fa fa-chevron-left"></i> K-subspace clustering
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/10/04/K-subspace/" rel="next" title="K-subspace clustering">
-      K-subspace clustering <i class="fa fa-chevron-right"></i>
+    <a href="/2022/10/05/spectral-graph-theory/" rel="next" title="spectral graph theory">
+      spectral graph theory <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -290,7 +301,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prior-Work-on-Subspace-Clustering"><span class="nav-number">1.1.</span> <span class="nav-text">Prior Work on Subspace Clustering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterative-methods"><span class="nav-number">1.1.1.</span> <span class="nav-text">Iterative methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Algebraic-approaches"><span class="nav-number">1.1.2.</span> <span class="nav-text">Algebraic approaches</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis-of-algorithm"><span class="nav-number">1.1.</span> <span class="nav-text">Analysis of algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Informal-discussion-The-%E2%80%9Cideal%E2%80%9D-case"><span class="nav-number">1.1.1.</span> <span class="nav-text">Informal discussion: The “ideal” case</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
