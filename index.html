@@ -536,6 +536,135 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/02/Chapter-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="compass">
+      <meta itemprop="description" content="Math, light of my life, fire of my loins. My sin, my soul.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="项脊轩">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/02/Chapter-6/" class="post-title-link" itemprop="url">Chapter 6 The Bernoulli and Poisson Processes</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-10-02 20:52:18" itemprop="dateCreated datePublished" datetime="2022-10-02T20:52:18+08:00">2022-10-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-10-18 20:49:20" itemprop="dateModified" datetime="2022-10-18T20:49:20+08:00">2022-10-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Introduction-to-Probability/" itemprop="url" rel="index"><span itemprop="name">Introduction to Probability</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="The-Bernoulli-Process"><a href="#The-Bernoulli-Process" class="headerlink" title="The Bernoulli Process"></a>The Bernoulli Process</h1><p><strong>Some Random Variables Associated with the Bernoulli Process and their Properties</strong></p>
+<p>The binomial  with parameters $p$ and $n$. This is the number $S$ of successes in $n$ independent trials. Its PMF, mean, and variance are </p>
+<script type="math/tex; mode=display">p_{S}(k)=\left(\begin{array}{l}
+n \\
+k
+\end{array}\right) p^{k}(1-p)^{n-k}, \quad k=0,1, \ldots, n</script><script type="math/tex; mode=display">\mathbf{E}[S]=n p, \quad \operatorname{var}(S)=n p(1-p)</script><p>The geometric with parameter $p$. This is the number $T$ of trials up to (and including) the first success. Its PMF, mean, and variance are </p>
+<script type="math/tex; mode=display">p_{T}(t)=(1-p)^{t-1} p, \quad t=1,2, \ldots</script><script type="math/tex; mode=display">\mathbf{E}[T]=\frac{1}{p}, \quad \operatorname{var}(T)=\frac{1-p}{p^{2}}</script><p><strong>Independence Properties of the Bernoulli Process</strong></p>
+<p>For any given time $n$, the sequence of random variables $X_{n+1},$ $X_{n+2},$. . . (the future of the process) is also a Bernoulli process, and is independent from $X_1,$. . .$X_n$ (the past of the process). </p>
+<p>Let $n$ be a given time and let $T$ be the time of the first success after time $n$. Then, $T- n$ has a geometric distribution with parameter $p$, and is independent of the random variables $X_1,$. . .$X_n$.</p>
+<p><strong>Alternative Description of the Bernoulli Process</strong></p>
+<p>Start with a sequence of independent geometric random variable $T_1,T_2,$. . .,with common parameter $p$, and let these stand for the interarrival times.</p>
+<p>Record a success time (or arrival) at times $T_1,T_1+T_2,T_1+T_2+T_3$,etc.</p>
+<p><strong>Properties of the kth Arrival Time</strong></p>
+<p>The $k$th arrival time is equal to the sum of the first $k$ interarrival times</p>
+<script type="math/tex; mode=display">Y_{k}=T_{1}+T_{2}+\cdots+T_{k}</script><p>and the latter are independent geometric random variables with common parameter $p$.</p>
+<p>The mean and variance of $Y_k$ are given by  </p>
+<script type="math/tex; mode=display">\mathbf{E}\left[Y_{k}\right]=\mathbf{E}\left[T_{1}\right]+\cdots+\mathbf{E}\left[T_{k}\right]=\frac{k}{p}</script><script type="math/tex; mode=display">\operatorname{var}\left(Y_{k}\right)=\operatorname{var}\left(T_{1}\right)+\cdots+\operatorname{var}\left(T_{k}\right)=\frac{k(1-p)}{p^{2}}</script><p>The PMF of $Y_k$ is given by</p>
+<script type="math/tex; mode=display">p_{Y_{k}}(t)=\left(\begin{array}{l}
+t-1 \\
+k-1
+\end{array}\right) p^{k}(1-p)^{t-k}, \quad t=k, k+1, \ldots4</script><p>and is known as the Pascal PMF of order $k$</p>
+<h1 id="The-Poisson-Process"><a href="#The-Poisson-Process" class="headerlink" title="The Poisson Process"></a>The Poisson Process</h1><p><strong>Definition of the Poisson Process </strong></p>
+<p>An arrival process is called a Poisson process with rate A if it has the following properties: </p>
+<p>(Time-homogeneity) The probability $P(k,\tau)$ of $k$ arrivals is the same for all intervals of the same length</p>
+<p>(Independence) The number of arrivals during a particular interval is independent of the history of arrivals outside this interval.</p>
+<p>(Small interval probabilities) The probabilities $P(k,\tau)$  satisfy</p>
+<script type="math/tex; mode=display">\begin{array}{l}
+P(0, \tau)=1-\lambda \tau+o(\tau) \\
+P(1, \tau)=\lambda \tau+o_{1}(\tau) \\
+P(k, \tau)=o_{k}(\tau)
+\end{array} for \quad k=2,3, \ldots</script><p>Here, $o(\tau)$ and $o_k(\tau)$ are functions of $\tau$, that satisfy </p>
+<script type="math/tex; mode=display">\lim _{\tau \rightarrow 0} \frac{o(\tau)}{\tau}=0, \quad \lim _{\tau \rightarrow 0} \frac{o_{k}(\tau)}{\tau}=0</script><p>The third property is critical. The $o(\tau)$ and $o_k(\tau)$ terms are meant to be negligible in comparison to $\tau$ when the interval length $\tau$ is very small. They can be thought of as the $O(\tau_2 )$ terms in a Taylor series expansion of $P(k,\tau)$ . Thus, for small $\tau,$ the probability of a single arrival is roughly $\lambda\tau,$ plus a negligible term. Similarly, for small $\tau$ the probability of zero arrivals is roughly $1-\lambda\tau$. Finally, the probability of two or more arrivals is negligible in comparison to $P(1,\tau)$, as $\tau$ becomes smaller. </p>
+<p><strong>Random Variables Associated with the Poisson Process and their Properties</strong></p>
+<p>The Poisson with parameter $\lambda\tau,$This is the number $N_\tau$ of arrivals in a Poisson process with rate $\lambda$, over an interval of length $\tau$. Its PMF, mean, and variance are </p>
+<script type="math/tex; mode=display">\begin{array}{c}
+p_{N_{\tau}}(k)=P(k, \tau)=e^{-\lambda \tau} \frac{(\lambda \tau)^{k}}{k !}, \quad k=0,1, \ldots, \\
+\mathbf{E}\left[N_{\tau}\right]=\lambda \tau, \quad \operatorname{var}\left(N_{\tau}\right)=\lambda \tau
+\end{array}</script><p>The exponential with parameter $\lambda$,This is the time $T$ until the first arrival. Its PDF, mean, and variance are </p>
+<script type="math/tex; mode=display">f_{T}(t)=\lambda e^{-\lambda t}, \quad t \geq 0, \quad \mathbf{E}[T]=\frac{1}{\lambda}, \quad \operatorname{var}(T)=\frac{1}{\lambda^{2}}</script><p><strong>Independence Properties of the Poisson Process</strong></p>
+<p>For any given time $t &gt; 0$, the history of the process after time $t$ is also a Poisson process, and is independent from the history of the process until time $t$. </p>
+<p>Let $t$ be a given time and let $T$ be the time of the first arrival after time $t$. Then, $T - t$ has an exponential distribution with parameter $\lambda$, and is independent of the history of the process until time $t$. </p>
+<p><strong>Alternative Description of the Poisson Process</strong></p>
+<p>Start with a sequence of independent exponential random variable $T_1,T_2,$. . .,with common parameter $\lambda$, and let these stand for the interarrival times. </p>
+<p>Record a success time (or arrival) at times $T_1,T_1+T_2,T_1+T_2+T_3$,etc.</p>
+<p><strong>Properties of the kth Arrival Time</strong></p>
+<p>The $k$th arrival time is equal to the sum of the first $k$ interarrival times</p>
+<script type="math/tex; mode=display">Y_{k}=T_{1}+T_{2}+\cdots+T_{k}</script><p>and the latter are independent exponential random variables with common parameter $\lambda$.</p>
+<p>The mean and variance of $Y_k$ are given by  </p>
+<script type="math/tex; mode=display">\mathbf{E}\left[Y_{k}\right]=\mathbf{E}\left[T_{1}\right]+\cdots+\mathbf{E}\left[T_{k}\right]=\frac{k}{\lambda}</script><script type="math/tex; mode=display">\operatorname{var}\left(Y_{k}\right)=\operatorname{var}\left(T_{1}\right)+\cdots+\operatorname{var}\left(T_{k}\right)=\frac{k}{\lambda^{2}}</script><p>The PMF of $Y_k$ is given by</p>
+<script type="math/tex; mode=display">f_{Y_{k}}(y)=\frac{\lambda^{k} y^{k-1} e^{-\lambda y}}{(k-1) !}, \quad y \geq 0</script><p>and is known as the Erlang PMF of order $k$</p>
+<p><strong>Properties of Sums of a Random Number of Random Variables</strong></p>
+<p>Let $N, X_1 ,… X_n,$be independent random variables, where $N$ takes nonnegative integer values. Let $Y = X_1 + . . . + X_N$ for positive values of $N$, and let $Y = 0$ when $N = 0$.</p>
+<p>If $X_i$ is Bernoulli with parameter $p$, and $N$ is binomial with parameters $m$ and $q$, then $Y$ is binomial with parameters $m$ and $pq$. </p>
+<p>If $X_i$ is Bernoulli with parameter $p$, and $N$ is Poisson with parameter $\lambda$, then $Y$ is Poisson with parameter $\lambda p$. </p>
+<p>If $X_i$ is geometric with parameter $p$, and $N$ is geometric with parameter $q$, then $Y$ is geometric with parameter $pq$. </p>
+<p>If $X_i$ is exponential with parameter $\lambda$, and $N$ is geometric with parameter $q$, then $Y$ is exponential with parameter $\lambda q$.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/02/sparse-subspace-clustering/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -773,7 +902,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/Chapter%205%20Limit%20Theorems/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/Chapter-5-Limit-Theorems/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -787,7 +916,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/09/29/Chapter%205%20Limit%20Theorems/" class="post-title-link" itemprop="url">Chapter 5 Limit Theorems</a>
+            <a href="/2022/09/29/Chapter-5-Limit-Theorems/" class="post-title-link" itemprop="url">Chapter 5 Limit Theorems</a>
         </h2>
 
         <div class="post-meta">
@@ -843,135 +972,6 @@ a, & \text { if } X \geq a
 <script type="math/tex; mode=display">\lim _{n \rightarrow \infty} \mathbf{P}\left(Z_{n} \leq z\right)=\Phi(z) \quad \text{for every    }  z .</script><h1 id="The-Strong-Law-of-Large-Numbers"><a href="#The-Strong-Law-of-Large-Numbers" class="headerlink" title="The Strong Law of Large Numbers"></a>The Strong Law of Large Numbers</h1><p><em>Let $X_1,$  $X_2,$ . . . be a sequence of independent identically distributed random variables with mean $\mu$. Then, the sequence of sample means $M_n = (X_1 + … + X_n)/n$ converges to $\mu,$ with probability 1, in the sense that</em></p>
 <script type="math/tex; mode=display">\mathbf{P}\left(\lim _{n \rightarrow \infty} \frac{X_{1}+\cdots+X_{n}}{n}=\mu\right)=1</script><h4 id="Convergence-with-Probability-1"><a href="#Convergence-with-Probability-1" class="headerlink" title="Convergence with Probability 1"></a>Convergence with Probability 1</h4><p><em>Let $Y_1,$  $Y_2,$ . . . be a sequence of random variables (not necessarily independent). Let $c$ be a real number. We say that $Y_n$ converges to $c$ with probability 1 if</em></p>
 <script type="math/tex; mode=display">\mathbf{P}\left(\lim _{n \rightarrow \infty} Y_{n}=c\right)=1</script>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/Chapter%206%20/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="compass">
-      <meta itemprop="description" content="Math, light of my life, fire of my loins. My sin, my soul.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="项脊轩">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/29/Chapter%206%20/" class="post-title-link" itemprop="url">Chapter 6 The Bernoulli and Poisson Processes</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-09-29 20:52:18" itemprop="dateCreated datePublished" datetime="2022-09-29T20:52:18+08:00">2022-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-10-02 22:17:13" itemprop="dateModified" datetime="2022-10-02T22:17:13+08:00">2022-10-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Introduction-to-Probability/" itemprop="url" rel="index"><span itemprop="name">Introduction to Probability</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="The-Bernoulli-Process"><a href="#The-Bernoulli-Process" class="headerlink" title="The Bernoulli Process"></a>The Bernoulli Process</h1><p><strong>Some Random Variables Associated with the Bernoulli Process and their Properties</strong></p>
-<p>The binomial  with parameters $p$ and $n$. This is the number $S$ of successes in $n$ independent trials. Its PMF, mean, and variance are </p>
-<script type="math/tex; mode=display">p_{S}(k)=\left(\begin{array}{l}
-n \\
-k
-\end{array}\right) p^{k}(1-p)^{n-k}, \quad k=0,1, \ldots, n</script><script type="math/tex; mode=display">\mathbf{E}[S]=n p, \quad \operatorname{var}(S)=n p(1-p)</script><p>The geometric with parameter $p$. This is the number $T$ of trials up to (and including) the first success. Its PMF, mean, and variance are </p>
-<script type="math/tex; mode=display">p_{T}(t)=(1-p)^{t-1} p, \quad t=1,2, \ldots</script><script type="math/tex; mode=display">\mathbf{E}[T]=\frac{1}{p}, \quad \operatorname{var}(T)=\frac{1-p}{p^{2}}</script><p><strong>Independence Properties of the Bernoulli Process</strong></p>
-<p>For any given time $n$, the sequence of random variables $X_{n+1},$ $X_{n+2},$. . . (the future of the process) is also a Bernoulli process, and is independent from $X_1,$. . .$X_n$ (the past of the process). </p>
-<p>Let $n$ be a given time and let $T$ be the time of the first success after time $n$. Then, $T- n$ has a geometric distribution with parameter $p$, and is independent of the random variables $X_1,$. . .$X_n$.</p>
-<p><strong>Alternative Description of the Bernoulli Process</strong></p>
-<p>Start with a sequence of independent geometric random variable $T_1,T_2,$. . .,with common parameter $p$, and let these stand for the interarrival times.</p>
-<p>Record a success time (or arrival) at times $T_1,T_1+T_2,T_1+T_2+T_3$,etc.</p>
-<p><strong>Properties of the kth Arrival Time</strong></p>
-<p>The $k$th arrival time is equal to the sum of the first $k$ interarrival times</p>
-<script type="math/tex; mode=display">Y_{k}=T_{1}+T_{2}+\cdots+T_{k}</script><p>and the latter are independent geometric random variables with common parameter $p$.</p>
-<p>The mean and variance of $Y_k$ are given by  </p>
-<script type="math/tex; mode=display">\mathbf{E}\left[Y_{k}\right]=\mathbf{E}\left[T_{1}\right]+\cdots+\mathbf{E}\left[T_{k}\right]=\frac{k}{p}</script><script type="math/tex; mode=display">\operatorname{var}\left(Y_{k}\right)=\operatorname{var}\left(T_{1}\right)+\cdots+\operatorname{var}\left(T_{k}\right)=\frac{k(1-p)}{p^{2}}</script><p>The PMF of $Y_k$ is given by</p>
-<script type="math/tex; mode=display">p_{Y_{k}}(t)=\left(\begin{array}{l}
-t-1 \\
-k-1
-\end{array}\right) p^{k}(1-p)^{t-k}, \quad t=k, k+1, \ldots4</script><p>and is known as the Pascal PMF of order $k$</p>
-<h1 id="The-Poisson-Process"><a href="#The-Poisson-Process" class="headerlink" title="The Poisson Process"></a>The Poisson Process</h1><p><strong>Definition of the Poisson Process </strong></p>
-<p>An arrival process is called a Poisson process with rate A if it has the following properties: </p>
-<p>(Time-homogeneity) The probability $P(k,\tau)$ of $k$ arrivals is the same for all intervals of the same length</p>
-<p>(Independence) The number of arrivals during a particular interval is independent of the history of arrivals outside this interval.</p>
-<p>(Small interval probabilities) The probabilities $P(k,\tau)$  satisfy</p>
-<script type="math/tex; mode=display">\begin{array}{l}
-P(0, \tau)=1-\lambda \tau+o(\tau) \\
-P(1, \tau)=\lambda \tau+o_{1}(\tau) \\
-P(k, \tau)=o_{k}(\tau)
-\end{array} for \quad k=2,3, \ldots</script><p>Here, $o(\tau)$ and $o_k(\tau)$ are functions of $\tau$, that satisfy </p>
-<script type="math/tex; mode=display">\lim _{\tau \rightarrow 0} \frac{o(\tau)}{\tau}=0, \quad \lim _{\tau \rightarrow 0} \frac{o_{k}(\tau)}{\tau}=0</script><p>The third property is critical. The $o(\tau)$ and $o_k(\tau)$ terms are meant to be negligible in comparison to $\tau$ when the interval length $\tau$ is very small. They can be thought of as the $O(\tau_2 )$ terms in a Taylor series expansion of $P(k,\tau)$ . Thus, for small $\tau,$ the probability of a single arrival is roughly $\lambda\tau,$ plus a negligible term. Similarly, for small $\tau$ the probability of zero arrivals is roughly $1-\lambda\tau$. Finally, the probability of two or more arrivals is negligible in comparison to $P(1,\tau)$, as $\tau$ becomes smaller. </p>
-<p><strong>Random Variables Associated with the Poisson Process and their Properties</strong></p>
-<p>The Poisson with parameter $\lambda\tau,$This is the number $N_\tau$ of arrivals in a Poisson process with rate $\lambda$, over an interval of length $\tau$. Its PMF, mean, and variance are </p>
-<script type="math/tex; mode=display">\begin{array}{c}
-p_{N_{\tau}}(k)=P(k, \tau)=e^{-\lambda \tau} \frac{(\lambda \tau)^{k}}{k !}, \quad k=0,1, \ldots, \\
-\mathbf{E}\left[N_{\tau}\right]=\lambda \tau, \quad \operatorname{var}\left(N_{\tau}\right)=\lambda \tau
-\end{array}</script><p>The exponential with parameter $\lambda$,This is the time $T$ until the first arrival. Its PDF, mean, and variance are </p>
-<script type="math/tex; mode=display">f_{T}(t)=\lambda e^{-\lambda t}, \quad t \geq 0, \quad \mathbf{E}[T]=\frac{1}{\lambda}, \quad \operatorname{var}(T)=\frac{1}{\lambda^{2}}</script><p><strong>Independence Properties of the Poisson Process</strong></p>
-<p>For any given time $t &gt; 0$, the history of the process after time $t$ is also a Poisson process, and is independent from the history of the process until time $t$. </p>
-<p>Let $t$ be a given time and let $T$ be the time of the first arrival after time $t$. Then, $T - t$ has an exponential distribution with parameter $\lambda$, and is independent of the history of the process until time $t$. </p>
-<p><strong>Alternative Description of the Poisson Process</strong></p>
-<p>Start with a sequence of independent exponential random variable $T_1,T_2,$. . .,with common parameter $\lambda$, and let these stand for the interarrival times. </p>
-<p>Record a success time (or arrival) at times $T_1,T_1+T_2,T_1+T_2+T_3$,etc.</p>
-<p><strong>Properties of the kth Arrival Time</strong></p>
-<p>The $k$th arrival time is equal to the sum of the first $k$ interarrival times</p>
-<script type="math/tex; mode=display">Y_{k}=T_{1}+T_{2}+\cdots+T_{k}</script><p>and the latter are independent exponential random variables with common parameter $\lambda$.</p>
-<p>The mean and variance of $Y_k$ are given by  </p>
-<script type="math/tex; mode=display">\mathbf{E}\left[Y_{k}\right]=\mathbf{E}\left[T_{1}\right]+\cdots+\mathbf{E}\left[T_{k}\right]=\frac{k}{\lambda}</script><script type="math/tex; mode=display">\operatorname{var}\left(Y_{k}\right)=\operatorname{var}\left(T_{1}\right)+\cdots+\operatorname{var}\left(T_{k}\right)=\frac{k}{\lambda^{2}}</script><p>The PMF of $Y_k$ is given by</p>
-<script type="math/tex; mode=display">f_{Y_{k}}(y)=\frac{\lambda^{k} y^{k-1} e^{-\lambda y}}{(k-1) !}, \quad y \geq 0</script><p>and is known as the Erlang PMF of order $k$</p>
-<p><strong>Properties of Sums of a Random Number of Random Variables</strong></p>
-<p>Let $N, X_1 ,… X_n,$be independent random variables, where $N$ takes nonnegative integer values. Let $Y = X_1 + . . . + X_N$ for positive values of $N$, and let $Y = 0$ when $N = 0$.</p>
-<p>If $X_i$ is Bernoulli with parameter $p$, and $N$ is binomial with parameters $m$ and $q$, then $Y$ is binomial with parameters $m$ and $pq$. </p>
-<p>If $X_i$ is Bernoulli with parameter $p$, and $N$ is Poisson with parameter $\lambda$, then $Y$ is Poisson with parameter $\lambda p$. </p>
-<p>If $X_i$ is geometric with parameter $p$, and $N$ is geometric with parameter $q$, then $Y$ is geometric with parameter $pq$. </p>
-<p>If $X_i$ is exponential with parameter $\lambda$, and $N$ is geometric with parameter $q$, then $Y$ is exponential with parameter $\lambda q$.</p>
-
       
     </div>
 
